@@ -231,7 +231,7 @@ public class BenchmarkCommand extends ConfiguredCommand<SocialiteConfiguration> 
         reporter.stop();
         logger.info("Test done. Shutting down...");
         for (ScheduledFuture<?> f : futures) {
-            f.cancel(true);
+            f.cancel(false);
         }
         executor.shutdown();
         executor.awaitTermination(2, TimeUnit.SECONDS);
